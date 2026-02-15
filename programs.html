@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программы - Екатерина Климова</title>
+    
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <meta name="description" content="Психологические программы и курсы">
+    <meta name="keywords" content="психология, программы, курсы, тренинги">
+    
+    <style>
+        /* Дополнительные стили для страницы программ */
+        .programs-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(232, 181, 181, 0.15);
+            border: 1px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(232, 181, 181, 0.25);
+        }
+
+        .program-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .program-icon {
+            font-size: 40px;
+        }
+
+        .program-header h3 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .program-description {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed var(--primary-color);
+        }
+
+        .program-details {
+            margin-bottom: 20px;
+        }
+
+        .program-details h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .program-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-details li {
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .program-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .program-duration, .program-price {
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .program-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .program-button:hover {
+            background: var(--hover-color);
+            transform: scale(1.05);
+        }
+
+        .programs-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #FFD9D9 100%);
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--hover-color);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .program-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .program-meta {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html#about">Обо мне</a>
+    <a href="index.html#directions">Направления</a>
+    <a href="index.html#prices">Цены</a>
+    <a href="programs.html">Программы</a>
+    <a href="articles.html">Статьи</a>
+    <a href="index.html#contacts">Контакты</a>
+</nav>
+
+<header>
+    <h1>Психологические программы</h1>
+    <div class="photo-caption">
+        <p>Глубокие трансформационные программы для личностного роста</p>
+    </div>
+</header>
+
+<section class="programs-list">
+    <h2>Текущие программы</h2>
+    
+    <div class="program-card">
+        <div class="program-header">
+            <span class="program-icon">🧘</span>
+            <h3>Анти-стресс за 30 дней</h3>
+        </div>
+        <p class="program-description">Программа по снижению тревожности и управлению стрессом</p>
+        
+        <div class="program-details">
+            <h4>Что вас ждет:</h4>
+            <ul>
+                <li>✓ Ежедневные практики релаксации</li>
+                <li>✓ Техники работы с тревожными мыслями</li>
+                <li>✓ Групповые встречи раз в неделю</li>
+                <li>✓ Поддержка в чате 24/7</li>
+            </ul>
+        </div>
+        
+        <div class="program-meta">
+            <span class="program-duration">📅 30 дней</span>
+            <span class="program-price">💰 15000 ₽</span>
+        </div>
+        
+        <a href="index.html#contacts" class="program-button">Записаться</a>
+    </div>
+    
+    <div class="program-card">
+        <div class="program-header">
+            <span class="program-icon">💕</span>
+            <h3>Гармония в отношениях</h3>
+        </div>
+        <p class="program-description">Курс для пар и индивидуальной работы над отношениями</p>
+        
+        <div class="program-details">
+            <h4>Что вас ждет:</h4>
+            <ul>
+                <li>✓ Понимание паттернов поведения</li>
+                <li>✓ Эффективная коммуникация</li>
+                <li>✓ Разрешение конфликтов</li>
+                <li>✓ Укрепление эмоциональной связи</li>
+            </ul>
+        </div>
+        
+        <div class="program-meta">
+            <span class="program-duration">📅 8 недель</span>
+            <span class="program-price">💰 25000 ₽</span>
+        </div>
+        
+        <a href="index.html#contacts" class="program-button">Записаться</a>
+    </div>
+    
+    <div class="program-card">
+        <div class="program-header">
+            <span class="program-icon">🦋</span>
+            <h3>Самооценка: путь к себе</h3>
+        </div>
+        <p class="program-description">Трансформационная программа для повышения самооценки</p>
+        
+        <div class="program-details">
+            <h4>Что вас ждет:</h4>
+            <ul>
+                <li>✓ Работа с внутренним критиком</li>
+                <li>✓ Принятие своих качеств</li>
+                <li>✓ Формирование здоровых границ</li>
+                <li>✓ Поддержка в группе единомышленников</li>
+            </ul>
+        </div>
+        
+        <div class="program-meta">
+            <span class="program-duration">📅 6 недель</span>
+            <span class="program-price">💰 18000 ₽</span>
+        </div>
+        
+        <a href="index.html#contacts" class="program-button">Записаться</a>
+    </div>
+</section>
+
+<section class="programs-cta">
+    <h2>Индивидуальный подход</h2>
+    <p>Все программы адаптируются под ваши личные запросы и особенности</p>
+    <a href="index.html#contacts" class="cta-button">Связаться для консультации</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Екатерина Климова. Все права защищены.</p>
+</footer>
+
+<!-- Кнопка вверх -->
+<button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+
+<!-- Ссылка на Телеграм -->
+<a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank">&#128172;</a>
+
+<script>
+// Плавное появление секций при скролле
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Появление кнопки "Вверх"
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.style.display = 'block';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
+});
+</script>
+</body>
+</html>
