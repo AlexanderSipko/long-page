@@ -1,6 +1,5 @@
+text
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Allow: /
-
-Sitemap: https://твой-домен.ru/sitemap.xml
