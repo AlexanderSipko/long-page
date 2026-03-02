@@ -226,8 +226,8 @@ section:last-of-type {
 h2 {
     color: var(--accent-color);
     margin: 1rem;
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 ul {
@@ -637,8 +637,8 @@ footer {
     }
     
     .consultation-roadmap h2 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 1rem;
+        margin-bottom: 5px;
     }
     
     .step {
