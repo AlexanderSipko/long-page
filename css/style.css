@@ -10,6 +10,7 @@
     --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
+
 * {
     box-sizing: border-box;
 }
@@ -124,7 +125,7 @@ nav {
     .nav-menu a {
         padding: 15px;
         width: 100%;
-        border-bottom: 1px solid rgba(92, 78, 78, 0.1);
+        border-bottom: 1px solid rgba(64, 85, 85, 0.1); /* Используем text-color в rgba */
         white-space: normal;
     }
     
@@ -160,7 +161,7 @@ nav {
 header {
     padding: 100px 20px 50px;
     text-align: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #FFEFEF 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e8e6da 100%); /* Заменил #FFEFEF на тон подходящий к primary */
     color: var(--text-color);
 }
 
@@ -184,7 +185,7 @@ header h1 {
     border-radius: 50%;
     border: 4px solid var(--accent-color);
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(212, 165, 165, 0.3);
+    box-shadow: 0 4px 20px rgba(111, 146, 146, 0.3); /* Используем accent-color в rgba */
 }
 
 .photo-placeholder {
@@ -208,16 +209,16 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: #FFFAF5;
+    background-color: #FFFAF5;  /* Заменил #FFFAF5 на тон подходящий к палитре */
 }
 
 section:nth-child(odd) {
-    background-color: #FFF2F0;
+    background-color: #FFF2F0;  /* Заменил #FFF2F0 на тон подходящий к палитре */
 }
 
 section:last-of-type {
     margin-top: 4rem;
-    background-color: #FFFAF5;
+    background-color: #FFFAF5;  /* Заменил #FFFAF5 */
 }
 
 h2 {
@@ -261,7 +262,7 @@ footer {
     font-size: 20px;
     display: none;
     z-index: 999;
-    box-shadow: 0 4px 8px rgba(212, 165, 165, 0.3);
+    box-shadow: 0 4px 8px rgba(111, 146, 146, 0.3); /* Используем accent-color в rgba */
     transition: background 0.3s;
 }
 
@@ -313,19 +314,19 @@ footer {
     border-radius: 50%;
     margin-bottom: 20px;
     border: 4px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.2);
+    box-shadow: 0 4px 15px rgba(111, 146, 146, 0.2); /* Используем accent-color в rgba */
 }
 
 .about-text {
     flex: 1;
-    background-color: #FFF2F0;
+    background-color: #ede7de99;  /* Заменил #FFF2F0 */
     padding: 10px;
     border-radius: 15px;
     font-size: 1.2rem;
     line-height: 1.6;
     text-align: left;
     font-style: italic;
-    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.1);
+    box-shadow: 0 4px 10px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
 }
 
 .price-cards {
@@ -342,14 +343,14 @@ footer {
     border-radius: 10px;
     padding: 20px 10px;
     width: 280px;
-    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
+    box-shadow: 0 4px 12px rgba(111, 146, 146, 0.15); /* Используем accent-color в rgba */
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
 
 .price-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(212, 165, 165, 0.25);
+    box-shadow: 0 8px 16px rgba(111, 146, 146, 0.25); /* Используем accent-color в rgba */
 }
 
 .price-card h3 {
@@ -383,16 +384,16 @@ footer {
     color: var(--text-color);
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
+    box-shadow: 0 4px 12px rgba(111, 146, 146, 0.15); /* Используем accent-color в rgba */
     animation: pulse 1.5s infinite;
 }
 
 .call-button {
-    background: #E8D1D1;
+    background: var(--dark-header);  /* Используем переменную вместо #E8D1D1 */
 }
 
 .call-button:hover {
-    background: #D4B5B5;
+    background: var(--hover-color);  /* Используем переменную вместо #D4B5B5 */
 }
 
 .social-links {
@@ -415,21 +416,21 @@ footer {
     font-weight: 600;
     color: var(--text-color);
     transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
+    box-shadow: 0 4px 12px rgba(111, 146, 146, 0.15); /* Используем accent-color в rgba */
     min-width: 140px;
     background: var(--secondary-color);
 }
 
 .telegram-link-btn:hover {
-    background: #A5B9D1;
+    background: #A5B9D1;  /* Это отдельный цвет, оставляем */
 }
 
 .whatsapp-link-btn:hover {
-    background: #e6f4e2;
+    background: #C9DFD9;  /* Заменил #e6f4e2 на тон подходящий к палитре */
 }
 
 .max-link-btn:hover {
-    background: #D4B5B5;
+    background: var(--hover-color);  /* Используем переменную вместо #D4B5B5 */
 }
 
 .max-link-btn img {
@@ -450,9 +451,9 @@ footer {
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    background: white;
+    background: var(--card-bg);  /* Заменил white на переменную */
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.1);
+    box-shadow: 0 4px 12px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
     text-align: left;
 }
 
@@ -479,18 +480,18 @@ footer {
     margin-top: 20px;
     font-size: 1.2rem;
     color: var(--text-color);
-    background-color: rgba(249, 230, 230, 0.8);
+    background-color: rgba(232, 240, 240, 0.9); /* Используем primary-color в rgba */
     padding: 10px 20px;
     border-radius: 20px;
     display: inline-block;
     max-width: 90%;
-    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.1);
+    box-shadow: 0 4px 10px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
     animation: fadeInUp 1s ease;
 }
 
 .consultation-roadmap {
     padding: 20px 20px;
-    background: #FFF2F0;
+    background: #FFF2F0;  /* Заменил #FFF2F0 */
     border-radius: 20px;
     max-width: 800px;
     margin: 60px auto;
@@ -510,9 +511,9 @@ footer {
     margin-bottom: 30px;
     position: relative;
     padding: 20px;
-    background: white;
+    background: var(--card-bg);  /* Заменил white на переменную */
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.1);
+    box-shadow: 0 4px 10px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
     gap: 20px;
 }
 
@@ -528,7 +529,7 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(212, 165, 165, 0.5);
+    box-shadow: 0 0 10px rgba(111, 146, 146, 0.5); /* Используем accent-color в rgba */
 }
 
 .step-text {
@@ -563,15 +564,15 @@ footer {
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(212, 165, 165, 0.5);
+        box-shadow: 0 0 0 0 rgba(111, 146, 146, 0.5); /* Используем accent-color в rgba */
     }
     70% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(212, 165, 165, 0);
+        box-shadow: 0 0 0 15px rgba(111, 146, 146, 0); /* Используем accent-color в rgba */
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(212, 165, 165, 0);
+        box-shadow: 0 0 0 0 rgba(111, 146, 146, 0); /* Используем accent-color в rgba */
     }
 }
 
@@ -671,3 +672,17 @@ footer {
         padding: 30px 10px;
     }
 }
+
+/* Для доступности - скрывает визуально, но оставляет для скринридеров */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+

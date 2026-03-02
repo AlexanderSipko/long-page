@@ -1,22 +1,56 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ПРОГРАММ ===== */
+
 .programs-list {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
+.programs-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.programs-intro .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Карточки программ */
 .program-card {
-    background: white;
+    position: relative;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(232, 181, 181, 0.15);
+    box-shadow: 0 4px 15px rgba(212, 165, 165, 0.15);
     border: 1px solid var(--primary-color);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .program-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(232, 181, 181, 0.25);
+    box-shadow: 0 8px 25px rgba(212, 165, 165, 0.25);
+}
+
+.program-card.featured {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(to bottom, var(--card-bg), var(--secondary-color));
+}
+
+.program-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .program-header {
@@ -27,13 +61,15 @@
 }
 
 .program-icon {
-    font-size: 40px;
+    font-size: 48px;
+    flex-shrink: 0;
 }
 
 .program-header h3 {
     color: var(--accent-color);
     font-size: 1.8rem;
     margin: 0;
+    line-height: 1.3;
 }
 
 .program-description {
@@ -50,7 +86,8 @@
 
 .program-details h4 {
     color: var(--accent-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
 }
 
 .program-details ul {
@@ -59,9 +96,10 @@
 }
 
 .program-details li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: var(--text-color);
     font-size: 1.1rem;
+    padding-left: 5px;
 }
 
 .program-meta {
@@ -71,11 +109,24 @@
     padding: 15px;
     background: var(--primary-color);
     border-radius: 10px;
+    flex-wrap: wrap;
 }
 
-.program-duration, .program-price {
-    font-size: 1.2rem;
+.program-duration,
+.program-price,
+.program-format {
+    font-size: 1.1rem;
     color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.program-note {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
 .program-button {
@@ -94,6 +145,120 @@
     transform: scale(1.05);
 }
 
+.program-footer {
+    text-align: center;
+}
+
+/* Секция сравнения */
+.programs-comparison {
+    background: var(--card-bg);
+    padding: 60px 20px;
+    margin: 0 auto;
+    /* margin: 40px 0; */
+    text-align: center;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.comparison-item {
+    background: var(--secondary-color);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.1);
+    transition: transform 0.3s;
+}
+
+.comparison-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(212, 165, 165, 0.2);
+}
+
+.comparison-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.comparison-item p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.comparison-item ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.comparison-item li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.comparison-item li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 8px;
+    font-size: 1.2rem;
+}
+
+/* FAQ */
+.programs-faq {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.faq-grid {
+    margin-top: 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: var(--card-bg);
+    transition: all 0.3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 10px rgba(212, 165, 165, 0.15);
+}
+
+.faq-item summary {
+    font-weight: 600;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    margin-top: 10px;
+    padding: 15px;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* CTA секция */
 .programs-cta {
     text-align: center;
     padding: 60px 20px;
@@ -119,6 +284,7 @@
     transform: scale(1.05);
 }
 
+/* Медиа-запросы */
 @media (max-width: 768px) {
     .program-header {
         flex-direction: column;
@@ -129,5 +295,42 @@
         flex-direction: column;
         gap: 10px;
         text-align: center;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .program-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .comparison-item {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .programs-list {
+        padding: 20px 10px;
+    }
+    
+    .program-card {
+        padding: 20px;
+    }
+    
+    .program-icon {
+        font-size: 40px;
+    }
+    
+    .program-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .program-description {
+        font-size: 1.1rem;
     }
 }

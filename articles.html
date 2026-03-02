@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статьи - Екатерина Климова</title>
+    <title>Статьи по психологии | Блог Екатерины Климовой</title>
     
     <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
@@ -15,9 +15,20 @@
     <link rel="stylesheet" href="css/articles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
-    <meta name="description" content="Психологические статьи и полезные материалы">
-    <meta name="keywords" content="психология, статьи, советы, самопомощь">
+    <meta name="description" content="Полезные статьи по психологии от Екатерины Климовой. Саморазвитие, отношения, работа с тревогой и стрессом. Практические советы и техники самопомощи.">
+    <meta name="keywords" content="статьи по психологии, психология отношений, саморазвитие, как справиться с тревогой, советы психолога, блог психолога">
     
+    <!-- Open Graph / Соцсети для страницы статей -->
+    <meta property="og:title" content="Блог психолога | Статьи о саморазвитии и отношениях">
+    <meta property="og:description" content="Полезные статьи о психологии, саморазвитии и отношениях от практикующего психолога Екатерины Климовой. Читайте и применяйте!" />
+    <meta property="og:image" content="https://www.klimovapsy.ru/images/articles-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.klimovapsy.ru/articles.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Екатерина Климова - Психолог">
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
@@ -37,9 +48,9 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">ЕК</a>
+                <a href="index.html" aria-label="На главную">ЕК</a>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="mobile-menu" aria-label="Меню" role="button" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -56,98 +67,137 @@
     </nav>
 
     <header>
-        <h1>Полезные статьи</h1>
+        <h1>Блог психолога: статьи о саморазвитии и психологии</h1>
         <div class="photo-caption">
-            <p>Психологические знания для гармоничной жизни</p>
+            <p>Полезные статьи, советы и техники для гармоничной жизни</p>
         </div>
     </header>
 
     <section class="articles-list">
-        <h2>Последние публикации</h2>
+        <h2>Последние публикации в блоге</h2>
         
         <div class="articles-grid">
             <article class="article-card">
-                <img src="images/articles/article1.jpg" alt="Как справиться с тревогой" class="article-image" onerror="this.style.display='none'">
+                <img src="images/articles/article1.jpg" 
+                     alt="Техники борьбы с тревогой: дыхательные практики и заземление" 
+                     class="article-image" 
+                     onerror="this.style.display='none'">
                 <div class="article-content">
-                    <h3>Как справиться с тревогой: простые техники</h3>
-                    <p class="article-excerpt">Эффективные методы саморегуляции для повседневной жизни</p>
+                    <h3>Как справиться с тревогой: простые техники для повседневной жизни</h3>
+                    <p class="article-excerpt">Эффективные методы саморегуляции, которые помогут снизить уровень тревоги прямо сейчас</p>
                     
                     <div class="article-full-content">
                         <p style="text-align: left;">
-                            Тревога — это естественная реакция психики на неопределенность.
+                            <strong>Тревога</strong> — это естественная реакция психики на неопределенность. 
                             В этой статье мы рассмотрим несколько простых, но эффективных техник для управления тревожными состояниями.
-                            Главное правило — не подавлять тревогу, а научиться с ней работать через дыхательные практики, заземление и когнитивные техники.
                         </p>
+                        <h4 style="text-align: left; color: var(--accent-color); margin-top: 15px;">Дыхательная техника 4-7-8:</h4>
+                        <p style="text-align: left;">Вдохните на 4 секунды, задержите дыхание на 7 секунд, выдохните на 8 секунд. Повторите 3-4 раза.</p>
+                        
+                        <h4 style="text-align: left; color: var(--accent-color);">Техника заземления "5-4-3-2-1":</h4>
+                        <p style="text-align: left;">Назовите 5 вещей, которые видите, 4 - которые можете потрогать, 3 - которые слышите, 2 - которые можете понюхать, 1 - которую можете попробовать на вкус.</p>
+                        
+                        <p style="text-align: left; margin-top: 15px;">Главное правило — не подавлять тревогу, а научиться с ней работать через эти простые практики.</p>
                     </div>
-                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    <button class="read-more-btn" onclick="toggleArticle(this)" aria-label="Читать полностью статью о борьбе с тревогой">Читать далее</button>
                     
                     <div class="article-meta">
-                        <span class="article-date">📅 12.01.2025</span>
-                        <span class="article-category">🏷️ Саморазвитие</span>
+                        <span class="article-date" aria-label="Дата публикации: 12 января 2025">📅 12.01.2025</span>
+                        <span class="article-category" aria-label="Категория: Саморазвитие">🏷️ Саморазвитие</span>
+                        <span class="article-read-time" aria-label="Время чтения: 5 минут">⏱️ 5 мин</span>
                     </div>
                 </div>
             </article>
             
             <article class="article-card">
-                <img src="images/articles/article2.jpg" alt="Здоровые отношения" class="article-image" onerror="this.style.display='none'">
+                <img src="images/articles/article2.jpg" 
+                     alt="Пара общается в кафе - признаки здоровых отношений" 
+                     class="article-image" 
+                     onerror="this.style.display='none'">
                 <div class="article-content">
-                    <h3>5 признаков здоровых отношений</h3>
-                    <p class="article-excerpt">На что обратить внимание в партнерстве</p>
+                    <h3>5 признаков здоровых отношений: на что обратить внимание в паре</h3>
+                    <p class="article-excerpt">Как понять, что ваши отношения развиваются в правильном направлении</p>
                     
                     <div class="article-full-content">
                         <p style="text-align: left;">
                             Здоровые отношения строятся на взаимном уважении, доверии и открытости. Вот основные признаки, которые указывают на гармоничный союз:
                         </p>
-                        <p style="text-align: left;">1. Вы можете быть собой без страха осуждения;</p>
-                        <p style="text-align: left;">2. Конфликты решаются конструктивно;</p>
-                        <p style="text-align: left;">3. Есть личное пространство у каждого;</p>
-                        <p style="text-align: left;">4. Поддержка в трудные моменты;</p>
-                        <p style="text-align: left;">5. Общие ценности и цели.</p>
+                        <ol style="text-align: left; padding-left: 20px; margin-top: 10px;">
+                            <li style="margin-bottom: 8px;"><strong>Аутентичность:</strong> Вы можете быть собой без страха осуждения;</li>
+                            <li style="margin-bottom: 8px;"><strong>Конструктивные конфликты:</strong> Ссоры решаются через диалог, а не крики и манипуляции;</li>
+                            <li style="margin-bottom: 8px;"><strong>Личное пространство:</strong> У каждого есть время на себя и свои увлечения;</li>
+                            <li style="margin-bottom: 8px;"><strong>Взаимоподдержка:</strong> Партнеры поддерживают друг друга в трудные моменты;</li>
+                            <li style="margin-bottom: 8px;"><strong>Общие ценности:</strong> Совпадение в важных жизненных вопросах и планах на будущее.</li>
+                        </ol>
+                        <p style="text-align: left; margin-top: 15px;">Помните: здоровые отношения - это не отсутствие проблем, а умение их решать вместе.</p>
                     </div>
-                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    <button class="read-more-btn" onclick="toggleArticle(this)" aria-label="Читать полностью о признаках здоровых отношений">Читать далее</button>
                     
                     <div class="article-meta">
                         <span class="article-date">📅 22.01.2025</span>
                         <span class="article-category">🏷️ Отношения</span>
+                        <span class="article-read-time">⏱️ 4 мин</span>
                     </div>
                 </div>
             </article>
             
             <article class="article-card">
-                <img src="images/articles/article3.jpg" alt="Эмоциональный интеллект" class="article-image" onerror="this.style.display='none'">
+                <img src="images/articles/article3.jpg" 
+                     alt="Человек в медитации - принятие эмоций и развитие эмоционального интеллекта" 
+                     class="article-image" 
+                     onerror="this.style.display='none'">
                 <div class="article-content">
-                    <h3>Почему важно принимать свои эмоции</h3>
-                    <p class="article-excerpt">О роли эмоционального интеллекта в жизни</p>
+                    <h3>Почему важно принимать свои эмоции: развитие эмоционального интеллекта</h3>
+                    <p class="article-excerpt">О роли эмоционального интеллекта в жизни и как его развивать</p>
                     
                     <div class="article-full-content">
                         <p style="text-align: left;">
-                            Эмоции — это важная часть нашей жизни.
-                            Подавление чувств может привести к психосоматическим заболеваниям и внутренним конфликтам.
-                            Принятие эмоций — это первый шаг к эмоциональному интеллекту.
-                            Важно понимать, что нет "плохих" эмоций, есть лишь наши реакции на них.
-                            Учитесь наблюдать за своими чувствами без осуждения.
+                            <strong>Эмоциональный интеллект (EQ)</strong> — это способность распознавать свои и чужие эмоции, понимать их причины и управлять ими.
                         </p>
+                        <p style="text-align: left; margin-top: 10px;">
+                            Эмоции — это важная часть нашей жизни. Подавление чувств может привести к психосоматическим заболеваниям и внутренним конфликтам.
+                        </p>
+                        <h4 style="text-align: left; color: var(--accent-color); margin-top: 15px;">Как принимать свои эмоции:</h4>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Наблюдайте за чувствами без осуждения</li>
+                            <li>Называйте эмоции словами ("Я чувствую гнев", "Мне грустно")</li>
+                            <li>Ищите причину эмоции, а не подавляйте её</li>
+                            <li>Разрешайте себе плакать или злиться экологично</li>
+                        </ul>
+                        <p style="text-align: left; margin-top: 15px;">Принятие эмоций — это первый шаг к эмоциональному интеллекту. Важно понимать, что нет "плохих" эмоций, есть лишь наши реакции на них.</p>
                     </div>
-                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    <button class="read-more-btn" onclick="toggleArticle(this)" aria-label="Читать полностью о принятии эмоций">Читать далее</button>
                     
                     <div class="article-meta">
                         <span class="article-date">📅 25.02.2025</span>
                         <span class="article-category">🏷️ Психология</span>
+                        <span class="article-read-time">⏱️ 6 мин</span>
                     </div>
                 </div>
             </article>
         </div>
     </section>
+<!-- 
+    <section class="newsletter-section" style="background: var(--primary-color); padding: 60px 20px; margin-top: 40px; text-align: center;">
+        <div class="newsletter-container" style="max-width: 600px; margin: 0 auto;">
+            <h2 style="color: var(--accent-color); margin-bottom: 20px;">Подпишитесь на новые статьи</h2>
+            <p style="margin-bottom: 30px;">Получайте полезные материалы о психологии и саморазвитии на почту</p>
+            <form class="newsletter-form" action="#" method="post" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <input type="email" placeholder="Ваш email" required style="padding: 12px 20px; border: 2px solid var(--accent-color); border-radius: 30px; flex: 1; min-width: 250px;">
+                <button type="submit" style="background: var(--accent-color); color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; font-weight: 600;">Подписаться</button>
+            </form>
+        </div>
+    </section> -->
 
     <footer>
-        <p>&copy; 2026 Екатерина Климова. Все права защищены.</p>
+        <p>&copy; 2026 Екатерина Климова. Все права защищены. <a href="index.html#contacts" style="color: var(--text-color);">Контакты</a></p>
     </footer>
 
     <!-- Кнопка вверх -->
-    <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Наверх">&#8679;</button>
 
     <!-- Ссылка на Телеграм -->
-    <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank">&#128172;</a>
+    <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank" rel="noopener noreferrer" aria-label="Связаться в Telegram">&#128172;</a>
 
     <script src="js/script.js"></script>
 </body>

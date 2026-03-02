@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Программы - Екатерина Климова</title>
+    <title>Психологические программы и курсы | Екатерина Климова</title>
     
     <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
@@ -15,9 +15,20 @@
     <link rel="stylesheet" href="css/programs.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
-    <meta name="description" content="Психологические программы и курсы">
-    <meta name="keywords" content="психология, программы, курсы, тренинги">
+    <meta name="description" content="Трансформационные психологические программы: снижение стресса, улучшение отношений, повышение самооценки. Групповые и индивидуальные форматы. Запись открыта!">
+    <meta name="keywords" content="психологические программы, курсы психологии, тренинг личностного роста, антистресс программа, отношения, самооценка, группа поддержки">
     
+    <!-- Open Graph / Соцсети для страницы программ -->
+    <meta property="og:title" content="Психологические программы и курсы | Екатерина Климова">
+    <meta property="og:description" content="Трансформационные программы по снижению стресса, улучшению отношений и повышению самооценки. Групповые и индивидуальные форматы. Запись открыта!">
+    <meta property="og:image" content="https://www.klimovapsy.ru/images/programs-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.klimovapsy.ru/programs.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Екатерина Климова - Психолог">
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
@@ -37,9 +48,9 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html">ЕК</a>
+                <a href="index.html" aria-label="На главную">ЕК</a>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="mobile-menu" aria-label="Меню" role="button" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -48,7 +59,7 @@
                 <a href="index.html#about">Обо мне</a>
                 <a href="index.html#directions">Направления</a>
                 <a href="index.html#prices">Цены</a>
-                <a href="programs.html">Программы</a>
+                <a href="programs.html" class="active">Программы</a>
                 <a href="articles.html">Статьи</a>
                 <a href="index.html#contacts">Контакты</a>
             </div>
@@ -56,106 +67,182 @@
     </nav>
 
     <header>
-        <h1>Психологические программы</h1>
+        <h1>Психологические программы и курсы для личностного роста</h1>
         <div class="photo-caption">
-            <p>Глубокие трансформационные программы для личностного роста</p>
+            <p>Глубокие трансформационные программы под руководством психолога с 7-летним опытом</p>
         </div>
     </header>
 
+    <section class="programs-intro">
+        <h2>Выберите свою программу</h2>
+        <p class="intro-text">Все программы разработаны на основе современных психологических подходов и адаптированы под индивидуальные запросы участников. Доступны групповые и индивидуальные форматы.</p>
+    </section>
+
     <section class="programs-list">
-        <h2>Текущие программы</h2>
+        <h2 class="visually-hidden">Доступные программы</h2>
         
         <div class="program-card">
             <div class="program-header">
-                <span class="program-icon">🧘</span>
-                <h3>Анти-стресс за 30 дней</h3>
+                <span class="program-icon" aria-hidden="true">🧘</span>
+                <h3>Анти-стресс за 30 дней: программа управления тревогой</h3>
             </div>
-            <p class="program-description">Программа по снижению тревожности и управлению стрессом</p>
+            <p class="program-description">Комплексная программа по снижению тревожности, управлению стрессом и восстановлению эмоционального равновесия</p>
             
             <div class="program-details">
-                <h4>Что вас ждет:</h4>
+                <h4>Что вас ждет на программе:</h4>
                 <ul>
-                    <li>✓ Ежедневные практики релаксации</li>
-                    <li>✓ Техники работы с тревожными мыслями</li>
-                    <li>✓ Групповые встречи раз в неделю</li>
-                    <li>✓ Поддержка в чате 24/7</li>
+                    <li>✓ Ежедневные практики релаксации и дыхательные техники</li>
+                    <li>✓ Техники работы с тревожными мыслями (когнитивно-поведенческий подход)</li>
+                    <li>✓ Групповые встречи раз в неделю (поддержка и обратная связь)</li>
+                    <li>✓ Поддержка в закрытом Telegram-чате</li>
+                    <li>✓ Рабочая тетрадь с упражнениями</li>
                 </ul>
             </div>
             
             <div class="program-meta">
-                <span class="program-duration">📅 30 дней</span>
-                <span class="program-price">💰 15000 ₽</span>
+                <span class="program-duration" aria-label="Длительность: 30 дней">📅 30 дней</span>
+                <span class="program-price" aria-label="Стоимость: 15000 рублей">💰 15 000 ₽</span>
+                <span class="program-format" aria-label="Формат: онлайн">🌐 Онлайн</span>
             </div>
             
-            <a href="index.html#contacts" class="program-button">Записаться</a>
+            <div class="program-footer">
+                <p class="program-note">Старт новой группы каждое первое число месяца</p>
+                <a href="index.html#contacts" class="program-button">Записаться на программу</a>
+            </div>
         </div>
         
-        <div class="program-card">
+        <div class="program-card featured">
+            <div class="program-badge">Рекомендуемая программа</div>
             <div class="program-header">
-                <span class="program-icon">💕</span>
-                <h3>Гармония в отношениях</h3>
+                <span class="program-icon" aria-hidden="true">💕</span>
+                <h3>Гармония в отношениях: 8-недельный курс для пар и индивидуалов</h3>
             </div>
-            <p class="program-description">Курс для пар и индивидуальной работы над отношениями</p>
+            <p class="program-description">Курс для пар и индивидуальной работы над отношениями, который поможет выйти из конфликтов и укрепить эмоциональную связь</p>
             
             <div class="program-details">
-                <h4>Что вас ждет:</h4>
+                <h4>Что вас ждет на курсе:</h4>
                 <ul>
-                    <li>✓ Понимание паттернов поведения</li>
-                    <li>✓ Эффективная коммуникация</li>
-                    <li>✓ Разрешение конфликтов</li>
-                    <li>✓ Укрепление эмоциональной связи</li>
+                    <li>✓ Глубокое понимание паттернов поведения в отношениях</li>
+                    <li>✓ Техники эффективной коммуникации без конфликтов</li>
+                    <li>✓ Инструменты для разрешения конфликтов и обид</li>
+                    <li>✓ Укрепление эмоциональной связи и доверия</li>
+                    <li>✓ Практические задания для выполнения в паре или индивидуально</li>
                 </ul>
             </div>
             
             <div class="program-meta">
                 <span class="program-duration">📅 8 недель</span>
-                <span class="program-price">💰 25000 ₽</span>
+                <span class="program-price">💰 25 000 ₽ (для пары)</span>
+                <span class="program-format">🌐 Очно / Онлайн</span>
             </div>
             
-            <a href="index.html#contacts" class="program-button">Записаться</a>
+            <div class="program-footer">
+                <p class="program-note">Возможна оплата в рассрочку</p>
+                <a href="index.html#contacts" class="program-button">Записаться на курс</a>
+            </div>
         </div>
         
         <div class="program-card">
             <div class="program-header">
-                <span class="program-icon">🦋</span>
-                <h3>Самооценка: путь к себе</h3>
+                <span class="program-icon" aria-hidden="true">🦋</span>
+                <h3>Самооценка: путь к себе - трансформационная программа</h3>
             </div>
-            <p class="program-description">Трансформационная программа для повышения самооценки</p>
+            <p class="program-description">Глубокая работа над самооценкой, принятием себя и формированием здоровых личных границ</p>
             
             <div class="program-details">
-                <h4>Что вас ждет:</h4>
+                <h4>Что вас ждет на программе:</h4>
                 <ul>
-                    <li>✓ Работа с внутренним критиком</li>
-                    <li>✓ Принятие своих качеств</li>
-                    <li>✓ Формирование здоровых границ</li>
-                    <li>✓ Поддержка в группе единомышленников</li>
+                    <li>✓ Работа с внутренним критиком и формирование поддерживающего внутреннего голоса</li>
+                    <li>✓ Принятие своих качеств, сильных сторон и ограничений</li>
+                    <li>✓ Формирование здоровых границ и навыков самозащиты</li>
+                    <li>✓ Поддержка в группе единомышленников (максимум 8 человек)</li>
+                    <li>✓ Индивидуальная обратная связь от психолога</li>
                 </ul>
             </div>
             
             <div class="program-meta">
                 <span class="program-duration">📅 6 недель</span>
-                <span class="program-price">💰 18000 ₽</span>
+                <span class="program-price">💰 18 000 ₽</span>
+                <span class="program-format">🌐 Онлайн</span>
             </div>
             
-            <a href="index.html#contacts" class="program-button">Записаться</a>
+            <div class="program-footer">
+                <p class="program-note">Группа до 8 человек</p>
+                <a href="index.html#contacts" class="program-button">Записаться на программу</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs-comparison">
+        <h2>Как выбрать подходящую программу?</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h3>Анти-стресс за 30 дней</h3>
+                <p>Для тех, кто:</p>
+                <ul>
+                    <li>Испытывает хронический стресс</li>
+                    <li>Страдает от тревожности</li>
+                    <li>Хочет научиться расслабляться</li>
+                </ul>
+            </div>
+            <div class="comparison-item">
+                <h3>Гармония в отношениях</h3>
+                <p>Для тех, кто:</p>
+                <ul>
+                    <li>Хочет улучшить отношения с партнером</li>
+                    <li>Часто конфликтует с близкими</li>
+                    <li>Готовится к созданию семьи</li>
+                </ul>
+            </div>
+            <div class="comparison-item">
+                <h3>Самооценка: путь к себе</h3>
+                <p>Для тех, кто:</p>
+                <ul>
+                    <li>Не уверен в себе</li>
+                    <li>Зависит от мнения окружающих</li>
+                    <li>Хочет научиться говорить "нет"</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs-faq">
+        <h2>Часто задаваемые вопросы о программах</h2>
+        <div class="faq-grid">
+            <details class="faq-item">
+                <summary>Как проходят программы онлайн?</summary>
+                <p>Вы получаете ссылку на закрытый канал в Telegram, доступ к рабочей тетради и расписание встреч. Групповые встречи проходят 1 раз в неделю по вечерам (запись доступна).</p>
+            </details>
+            <details class="faq-item">
+                <summary>Можно ли участвовать анонимно?</summary>
+                <p>Да. В группе мы соблюдаем конфиденциальность и подписываем соглашение о неразглашении.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Что если я пропущу занятие?</summary>
+                <p>Все встречи записываются, записи доступны участникам в течение 30 дней после окончания программы. Также вы можете задать вопросы в чате.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Есть ли рассрочка?</summary>
+                <p>Да, для всех программ доступна беспроцентная рассрочка на 3-6 месяцев. Подробности уточняйте при записи.</p>
+            </details>
         </div>
     </section>
 
     <section class="programs-cta">
-        <h2>Индивидуальный подход</h2>
-        <p>Все программы адаптируются под ваши личные запросы и особенности</p>
-        <a href="index.html#contacts" class="cta-button">Связаться для консультации</a>
+        <h2>Не уверены, какая программа подойдет?</h2>
+        <p>Запишитесь на бесплатную 15-минутную консультацию, где мы подберем подходящий формат работы</p>
+        <a href="index.html#contacts" class="cta-button">Получить бесплатную консультацию</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Екатерина Климова. Все права защищены.</p>
+        <p>&copy; 2026 Екатерина Климова. Все права защищены. <a href="index.html#contacts" style="color: var(--text-color);">Контакты</a></p>
     </footer>
 
     <!-- Кнопка вверх -->
-    <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Наверх">&#8679;</button>
 
     <!-- Ссылка на Телеграм -->
-    <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank">&#128172;</a>
+    <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank" rel="noopener noreferrer" aria-label="Связаться в Telegram">&#128172;</a>
 
     <script src="js/script.js"></script>
 </body>

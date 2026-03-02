@@ -1,5 +1,8 @@
-text
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
 Allow: /
+
+Sitemap: https://www.klimovapsy.ru/sitemap.xml
+
+# Запрет для служебных страниц
+Disallow: /cgi-bin/
+Disallow: /tmp/
