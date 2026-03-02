@@ -11,233 +11,144 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="images/favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/articles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <meta name="description" content="Психологические статьи и полезные материалы">
     <meta name="keywords" content="психология, статьи, советы, самопомощь">
     
-    <style>
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107070837', 'ym');
 
-        .article-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(232, 181, 181, 0.15);
-            transition: transform 0.3s;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .article-content {
-            padding: 20px;
-        }
-
-        .article-content h3 {
-            color: var(--accent-color);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .article-excerpt {
-            color: var(--text-color);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .article-full-content {
-            margin: 15px 0;
-            padding: 15px;
-            background: var(--primary-color);
-            border-radius: 10px;
-            line-height: 1.6;
-            display: none;
-        }
-
-        .read-more-btn {
-            background: none;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 8px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-bottom: 15px;
-        }
-
-        .read-more-btn:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 20px;
-            color: #999;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--primary-color);
-            padding-top: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+        ym(107070837, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107070837" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
-<nav>
-    <a href="index.html#about">Обо мне</a>
-    <a href="index.html#directions">Направления</a>
-    <a href="index.html#prices">Цены</a>
-    <a href="programs.html">Программы</a>
-    <a href="articles.html">Статьи</a>
-    <a href="index.html#contacts">Контакты</a>
-</nav>
-
-<header>
-    <h1>Полезные статьи</h1>
-    <div class="photo-caption">
-        <p>Психологические знания для гармоничной жизни</p>
-    </div>
-</header>
-
-<section class="articles-list">
-    <h2>Последние публикации</h2>
-    
-    <div class="articles-grid">
-        <article class="article-card">
-            <img src="images/articles/article1.jpg" alt="Как справиться с тревогой" class="article-image" onerror="this.style.display='none'">
-            <div class="article-content">
-                <h3>Как справиться с тревогой: простые техники</h3>
-                <p class="article-excerpt">Эффективные методы саморегуляции для повседневной жизни</p>
-                
-                <div class="article-full-content">
-                    <p>Тревога — это естественная реакция психики на неопределенность. В этой статье мы рассмотрим несколько простых, но эффективных техник для управления тревожными состояниями. Главное правило — не подавлять тревогу, а научиться с ней работать через дыхательные практики, заземление и когнитивные техники.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
-                
-                <div class="article-meta">
-                    <span class="article-date">📅 15.03.2024</span>
-                    <span class="article-category">🏷️ Саморазвитие</span>
-                </div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">ЕК</a>
             </div>
-        </article>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#about">Обо мне</a>
+                <a href="index.html#directions">Направления</a>
+                <a href="index.html#prices">Цены</a>
+                <a href="programs.html">Программы</a>
+                <a href="articles.html">Статьи</a>
+                <a href="index.html#contacts">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Полезные статьи</h1>
+        <div class="photo-caption">
+            <p>Психологические знания для гармоничной жизни</p>
+        </div>
+    </header>
+
+    <section class="articles-list">
+        <h2>Последние публикации</h2>
         
-        <article class="article-card">
-            <img src="images/articles/article2.jpg" alt="Здоровые отношения" class="article-image" onerror="this.style.display='none'">
-            <div class="article-content">
-                <h3>5 признаков здоровых отношений</h3>
-                <p class="article-excerpt">На что обратить внимание в партнерстве</p>
-                
-                <div class="article-full-content">
-                    <p>Здоровые отношения строятся на взаимном уважении, доверии и открытости. Вот основные признаки, которые указывают на гармоничный союз: 1) Вы можете быть собой без страха осуждения; 2) Конфликты решаются конструктивно; 3) Есть личное пространство у каждого; 4) Поддержка в трудные моменты; 5) Общие ценности и цели.</p>
+        <div class="articles-grid">
+            <article class="article-card">
+                <img src="images/articles/article1.jpg" alt="Как справиться с тревогой" class="article-image" onerror="this.style.display='none'">
+                <div class="article-content">
+                    <h3>Как справиться с тревогой: простые техники</h3>
+                    <p class="article-excerpt">Эффективные методы саморегуляции для повседневной жизни</p>
+                    
+                    <div class="article-full-content">
+                        <p style="text-align: left;">
+                            Тревога — это естественная реакция психики на неопределенность.
+                            В этой статье мы рассмотрим несколько простых, но эффективных техник для управления тревожными состояниями.
+                            Главное правило — не подавлять тревогу, а научиться с ней работать через дыхательные практики, заземление и когнитивные техники.
+                        </p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    
+                    <div class="article-meta">
+                        <span class="article-date">📅 12.01.2025</span>
+                        <span class="article-category">🏷️ Саморазвитие</span>
+                    </div>
                 </div>
-                <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
-                
-                <div class="article-meta">
-                    <span class="article-date">📅 10.03.2024</span>
-                    <span class="article-category">🏷️ Отношения</span>
+            </article>
+            
+            <article class="article-card">
+                <img src="images/articles/article2.jpg" alt="Здоровые отношения" class="article-image" onerror="this.style.display='none'">
+                <div class="article-content">
+                    <h3>5 признаков здоровых отношений</h3>
+                    <p class="article-excerpt">На что обратить внимание в партнерстве</p>
+                    
+                    <div class="article-full-content">
+                        <p style="text-align: left;">
+                            Здоровые отношения строятся на взаимном уважении, доверии и открытости. Вот основные признаки, которые указывают на гармоничный союз:
+                        </p>
+                        <p style="text-align: left;">1. Вы можете быть собой без страха осуждения;</p>
+                        <p style="text-align: left;">2. Конфликты решаются конструктивно;</p>
+                        <p style="text-align: left;">3. Есть личное пространство у каждого;</p>
+                        <p style="text-align: left;">4. Поддержка в трудные моменты;</p>
+                        <p style="text-align: left;">5. Общие ценности и цели.</p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    
+                    <div class="article-meta">
+                        <span class="article-date">📅 22.01.2025</span>
+                        <span class="article-category">🏷️ Отношения</span>
+                    </div>
                 </div>
-            </div>
-        </article>
-        
-        <article class="article-card">
-            <img src="images/articles/article3.jpg" alt="Эмоциональный интеллект" class="article-image" onerror="this.style.display='none'">
-            <div class="article-content">
-                <h3>Почему важно принимать свои эмоции</h3>
-                <p class="article-excerpt">О роли эмоционального интеллекта в жизни</p>
-                
-                <div class="article-full-content">
-                    <p>Эмоции — это важная часть нашей жизни. Подавление чувств может привести к психосоматическим заболеваниям и внутренним конфликтам. Принятие эмоций — это первый шаг к эмоциональному интеллекту. Важно понимать, что нет "плохих" эмоций, есть лишь наши реакции на них. Учитесь наблюдать за своими чувствами без осуждения.</p>
+            </article>
+            
+            <article class="article-card">
+                <img src="images/articles/article3.jpg" alt="Эмоциональный интеллект" class="article-image" onerror="this.style.display='none'">
+                <div class="article-content">
+                    <h3>Почему важно принимать свои эмоции</h3>
+                    <p class="article-excerpt">О роли эмоционального интеллекта в жизни</p>
+                    
+                    <div class="article-full-content">
+                        <p style="text-align: left;">
+                            Эмоции — это важная часть нашей жизни.
+                            Подавление чувств может привести к психосоматическим заболеваниям и внутренним конфликтам.
+                            Принятие эмоций — это первый шаг к эмоциональному интеллекту.
+                            Важно понимать, что нет "плохих" эмоций, есть лишь наши реакции на них.
+                            Учитесь наблюдать за своими чувствами без осуждения.
+                        </p>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
+                    
+                    <div class="article-meta">
+                        <span class="article-date">📅 25.02.2025</span>
+                        <span class="article-category">🏷️ Психология</span>
+                    </div>
                 </div>
-                <button class="read-more-btn" onclick="toggleArticle(this)">Читать далее</button>
-                
-                <div class="article-meta">
-                    <span class="article-date">📅 05.03.2024</span>
-                    <span class="article-category">🏷️ Психология</span>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
+            </article>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2025 Екатерина Климова. Все права защищены.</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Екатерина Климова. Все права защищены.</p>
+    </footer>
 
-<!-- Кнопка вверх -->
-<button class="scroll-top" id="scrollTopBtn">&#8679;</button>
+    <!-- Кнопка вверх -->
+    <button class="scroll-top" id="scrollTopBtn">&#8679;</button>
 
-<!-- Ссылка на Телеграм -->
-<a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank">&#128172;</a>
+    <!-- Ссылка на Телеграм -->
+    <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank">&#128172;</a>
 
-<script>
-function toggleArticle(btn) {
-    const articleContent = btn.previousElementSibling;
-    if (articleContent.style.display === 'none' || !articleContent.style.display) {
-        articleContent.style.display = 'block';
-        btn.textContent = 'Скрыть';
-    } else {
-        articleContent.style.display = 'none';
-        btn.textContent = 'Читать далее';
-    }
-}
-
-// Плавное появление секций при скролле
-const sections = document.querySelectorAll('section');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, {
-    threshold: 0.2
-});
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Появление кнопки "Вверх"
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-        scrollTopBtn.style.display = 'block';
-    } else {
-        scrollTopBtn.style.display = 'none';
-    }
-});
-
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
+    <script src="js/script.js"></script>
 </body>
 </html>
