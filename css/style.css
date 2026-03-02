@@ -16,9 +16,6 @@
     box-sizing: border-box;
 }
 
-h1 {
-    font-size: 12px;
-}
 
 html {
     scroll-behavior: smooth;
@@ -172,7 +169,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     animation: fadeInDown 1s ease;
     color: var(--text-color);
 }
@@ -206,7 +203,7 @@ header h1 {
 section {
     width: 100%;
     max-width: 80%;
-    padding: 40px 20px;
+    padding: 20px 20px;
     margin: auto;
     border-radius: 20px;
     text-align: center;
@@ -222,7 +219,7 @@ section:nth-child(odd) {
 }
 
 section:last-of-type {
-    margin-top: 4rem;
+    margin-top: 0.5rem;
     background-color: #FFFAF5;  /* Заменил #FFFAF5 */
 }
 
@@ -588,7 +585,7 @@ footer {
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .photo-container img,
