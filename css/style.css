@@ -7,7 +7,8 @@
     --telegram-color: #B8C9E1;
     --card-bg: #FFFFFF;
     --hover-color: #C9B2B2;
-    --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    /* --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif; */
+    --font-main: 'FuturaPT', Arial, sans-serif;
 }
 
 
@@ -477,15 +478,15 @@ footer {
 }
 
 .photo-caption {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 1.2rem;
     color: var(--text-color);
-    background-color: rgba(232, 240, 240, 0.9); /* Используем primary-color в rgba */
+    font-style: italic;
     padding: 10px 20px;
     border-radius: 20px;
     display: inline-block;
     max-width: 90%;
-    box-shadow: 0 4px 10px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
+    box-shadow: 0 2px 5px rgba(111, 146, 146, 0.1); /* Используем accent-color в rgba */
     animation: fadeInUp 1s ease;
 }
 
