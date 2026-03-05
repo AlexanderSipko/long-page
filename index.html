@@ -233,6 +233,397 @@
     <!-- Ссылка на Телеграм -->
     <a class="telegram-link" href="https://t.me/loveAbuz2020" target="_blank" rel="noopener noreferrer" aria-label="Связаться в Telegram">&#128172;</a>
 
+
+
+    <!-- Виджет отзывов -->
+<div class="reviews-widget" id="reviewsWidget">
+    <div class="reviews-widget-header">
+        <span class="reviews-widget-title">💬 Отзывы клиентов</span>
+        <button class="reviews-widget-close" id="closeReviewsWidget" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="reviews-widget-content" id="reviewsWidgetContent">
+        <!-- Здесь будут появляться отзывы -->
+    </div>
+    <button class="reviews-widget-toggle" id="toggleReviewsWidget" aria-label="Показать/скрыть отзывы">
+        <span>👥</span>
+    </button>
+</div>
+
+<style>
+/* Стили для виджета отзывов */
+.reviews-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(227, 181, 181, 0.3);
+    border: 1px solid var(--primary-color);
+    z-index: 998;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.reviews-widget.minimized {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(227, 181, 181, 0.4);
+}
+
+.reviews-widget.minimized .reviews-widget-header,
+.reviews-widget.minimized .reviews-widget-content,
+.reviews-widget.minimized .reviews-widget-close {
+    display: none;
+}
+
+.reviews-widget.minimized .reviews-widget-toggle {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-color);
+    color: white;
+    font-size: 24px;
+}
+
+.reviews-widget:not(.minimized) .reviews-widget-toggle span {
+    display: none;
+}
+
+.reviews-widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #FCE4E4 100%);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.reviews-widget-title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.reviews-widget-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0 5px;
+    transition: color 0.3s;
+}
+
+.reviews-widget-close:hover {
+    color: var(--accent-color);
+}
+
+.reviews-widget-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--primary-color);
+}
+
+.reviews-widget-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.reviews-widget-content::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+.reviews-widget-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+.review-item {
+    background: var(--secondary-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(227, 181, 181, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--hover-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.review-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: auto;
+}
+
+.review-rating {
+    color: #FFB800;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.review-service {
+    font-size: 0.85rem;
+    color: #888;
+    text-align: right;
+}
+
+.reviews-widget-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.review-item {
+    animation: slideIn 0.3s ease;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .reviews-widget {
+        width: 280px;
+        bottom: 90px;
+        right: 10px;
+    }
+    
+    .reviews-widget.minimized {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .reviews-widget.minimized .reviews-widget-toggle span {
+        font-size: 20px;
+    }
+}
+</style>
+
+<script>
+// Массив с отзывами клиентов
+const reviews = [
+    {
+        name: "Анна",
+        avatar: "А",
+        rating: 5,
+        text: "Огромное спасибо Екатерине за помощь! Пришла с тревогой и постоянным напряжением. Уже после нескольких сессий почувствовала облегчение. Очень бережный и профессиональный подход.",
+        service: "Индивидуальная терапия",
+        date: "15.02.2025"
+    },
+    {
+        name: "Михаил",
+        avatar: "М",
+        rating: 5,
+        text: "Ходили с женой на семейные консультации. Были серьёзные разногласия, думали уже расходиться. Екатерина помогла нам услышать друг друга. Спасибо за спасённую семью!",
+        service: "Семейная консультация",
+        date: "28.01.2025"
+    },
+    {
+        name: "Елена",
+        avatar: "Е",
+        rating: 5,
+        text: "Очень комфортный специалист. Не бойтесь идти к психологу, Екатерина создаёт безопасное пространство, где можно быть собой. Проработали мои детские травмы, стало намного легче жить.",
+        service: "Индивидуальная терапия",
+        date: "03.03.2025"
+    },
+    {
+        name: "Дмитрий",
+        avatar: "Д",
+        rating: 5,
+        text: "Долго не решался обратиться к психологу, но проблемы с самооценкой мешали и работе, и личной жизни. Екатерина помогла поверить в себя. Очень благодарен!",
+        service: "Индивидуальная терапия",
+        date: "10.02.2025"
+    },
+    {
+        name: "Ольга",
+        avatar: "О",
+        rating: 5,
+        text: "Проходила программу 'Анти-стресс'. Очень понравился формат — и теория, и практика, и поддержка в чате. Научилась справляться с тревогой, стала спокойнее и увереннее.",
+        service: "Программа Анти-стресс",
+        date: "20.12.2024"
+    },
+    {
+        name: "Сергей",
+        avatar: "С",
+        rating: 5,
+        text: "Спасибо за онлайн-консультации! Очень удобно, когда нет возможности приехать лично. Екатерина очень внимательная, даёт рабочие техники. Рекомендую!",
+        service: "Онлайн-сессия",
+        date: "05.02.2025"
+    },
+    {
+        name: "Наталья",
+        avatar: "Н",
+        rating: 5,
+        text: "Ходили с дочкой-подростком, были сложности в общении. Екатерина помогла наладить контакт. Теперь мы стали ближе и понимаем друг друга. Спасибо!",
+        service: "Семейная консультация",
+        date: "17.01.2025"
+    },
+    {
+        name: "Ирина",
+        avatar: "И",
+        rating: 5,
+        text: "Прошла курс по самооценке. Это было потрясающе! Группа поддержки, домашние задания, обратная связь. Я наконец-то начала себя ценить и разрешила себе быть собой.",
+        service: "Программа Самооценка",
+        date: "12.02.2025"
+    }
+];
+
+class ReviewsWidget {
+    constructor() {
+        this.widget = document.getElementById('reviewsWidget');
+        this.content = document.getElementById('reviewsWidgetContent');
+        this.closeBtn = document.getElementById('closeReviewsWidget');
+        this.toggleBtn = document.getElementById('toggleReviewsWidget');
+        this.isVisible = true;
+        this.currentReviews = [];
+        this.interval = null;
+        
+        this.init();
+    }
+    
+    init() {
+        // Слушатели событий
+        this.closeBtn.addEventListener('click', () => this.hide());
+        this.toggleBtn.addEventListener('click', () => this.show());
+        
+        // Начать показ отзывов
+        this.startShowing();
+        
+        // Пауза при наведении
+        this.widget.addEventListener('mouseenter', () => this.pause());
+        this.widget.addEventListener('mouseleave', () => this.resume());
+    }
+    
+    getRandomReviews(count = 3) {
+        // Перемешиваем массив и берём первые count элементов
+        return [...reviews].sort(() => Math.random() - 0.5).slice(0, count);
+    }
+    
+    renderReviews(reviewsArray) {
+        this.content.innerHTML = reviewsArray.map(review => `
+            <div class="review-item">
+                <div class="review-header">
+                    <div class="review-avatar">${review.avatar}</div>
+                    <span class="review-name">${review.name}</span>
+                    <span class="review-date">${review.date}</span>
+                </div>
+                <div class="review-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</div>
+                <p class="review-text">"${review.text}"</p>
+                <div class="review-service">${review.service}</div>
+            </div>
+        `).join('');
+    }
+    
+    updateReviews() {
+        if (!this.isVisible) return;
+        
+        const newReviews = this.getRandomReviews(Math.floor(Math.random() * 2) + 2); // 2-3 отзыва
+        
+        // Добавляем анимацию появления
+        this.content.style.opacity = '0';
+        setTimeout(() => {
+            this.renderReviews(newReviews);
+            this.content.style.opacity = '1';
+            this.content.style.transition = 'opacity 0.3s';
+        }, 300);
+    }
+    
+    startShowing() {
+        // Сразу показываем первые отзывы
+        this.updateReviews();
+        
+        // Меняем каждые 7-10 секунд
+        this.interval = setInterval(() => {
+            this.updateReviews();
+        }, Math.random() * 3000 + 7000); // 7000-10000 мс
+    }
+    
+    pause() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+        }
+    }
+    
+    resume() {
+        if (!this.interval && this.isVisible) {
+            this.startShowing();
+        }
+    }
+    
+    hide() {
+        this.isVisible = false;
+        this.pause();
+        this.widget.classList.add('minimized');
+    }
+    
+    show() {
+        this.isVisible = true;
+        this.widget.classList.remove('minimized');
+        this.startShowing();
+    }
+}
+
+// Инициализация виджета после загрузки страницы
+document.addEventListener('DOMContentLoaded', () => {
+    new ReviewsWidget();
+});
+</script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
