@@ -181,8 +181,10 @@ header h1 {
 
 .photo-container img,
 .photo-placeholder {
-    width: 250px;
-    height: 250px;
+    /* width: 250px;
+    height: 250px; */
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--accent-color);
@@ -666,8 +668,10 @@ footer {
 
     .photo-container img,
     .photo-placeholder {
-        width: 150px;
-        height: 150px;
+        /* width: 150px;
+        height: 150px; */
+        width: 350px;
+        height: 350px;
     }
 
     section {
