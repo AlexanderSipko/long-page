@@ -439,6 +439,97 @@
             }
         }
     </style>
+
+    <style>
+        .video-cloud-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-cloud-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.cloud-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.cloud-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+.video-cloud-card:hover .cloud-preview {
+    filter: brightness(0.8);
+}
+
+.cloud-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0.9;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.cloud-play-btn svg {
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    transition: transform 0.2s;
+}
+
+.video-cloud-card:hover .cloud-play-btn svg {
+    transform: scale(1.1);
+}
+
+.cloud-play-btn:hover svg circle {
+    fill: white;
+}
+
+/* Бейдж "Видеоотзыв" */
+.video-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(227, 181, 181, 0.9);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 5;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .cloud-play-btn svg {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .video-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -591,96 +682,57 @@
     <div id="videos-tab" class="tab-pane">
         <section class="videos-list">
             <h2 class="visually-hidden">Видео-отзывы</h2>
+            
             <div class="videos-grid">
                 <!-- Видео 1 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview1.jpg">
-                            <source src="videos/review1.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
+                
+                <div class="video-card video-cloud-card">
+                    <div class="video-wrapper cloud-video">
+                        <!-- Превью видео (постер) -->
+                        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xFgA/WzC15dtLm" 
+                             alt="Превью видео Анны" 
+                             class="cloud-preview"
+                             onerror="this.src='images/review-placeholder.jpg'">
+                        
+                        <!-- Кнопка Play -->
+                        <a href="https://cloud.mail.ru/public/xFgA/WzC15dtLm" 
+                           target="_blank" 
+                           class="cloud-play-btn">
+                            <svg width="60" height="60" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" fill="white" opacity="0.9"/>
+                                <polygon points="10,8 16,12 10,16" fill="var(--accent-color)"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Надпись "Видеоотзыв" -->
+                        <span class="video-badge">🎥 Видеоотзыв</span>
                     </div>
-                    <div class="video-content">
-                        <h3>Анна, 34 года</h3>
-                        <div class="video-service">Индивидуальная терапия, 6 месяцев</div>
-                        <p class="video-description">"Пришла с выгоранием и тревогой. Сейчас чувствую себя спокойно и уверенно. Спасибо за поддержку!"</p>
-                    </div>
-                </div>
+                </div>    
 
                 <!-- Видео 2 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview2.jpg">
-                            <source src="videos/review2.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
+                <div class="video-card video-cloud-card">
+                    <div class="video-wrapper cloud-video">
+                        <!-- Превью видео (постер) -->
+                        <img src="https://thumb.cloud.mail.ru/weblink/thumb/xFgA/WzC15dtLm" 
+                             alt="Превью видео Анны" 
+                             class="cloud-preview"
+                             onerror="this.src='images/review-placeholder.jpg'">
+                        
+                        <!-- Кнопка Play -->
+                        <a href="https://cloud.mail.ru/public/xFgA/WzC15dtLm" 
+                           target="_blank" 
+                           class="cloud-play-btn">
+                            <svg width="60" height="60" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" fill="white" opacity="0.9"/>
+                                <polygon points="10,8 16,12 10,16" fill="var(--accent-color)"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Надпись "Видеоотзыв" -->
+                        <span class="video-badge">🎥 Видеоотзыв</span>
                     </div>
-                    <div class="video-content">
-                        <h3>Михаил и Елена</h3>
-                        <div class="video-service">Семейная терапия, 4 месяца</div>
-                        <p class="video-description">"Были на грани развода. Екатерина помогла нам услышать друг друга. Сейчас всё хорошо!"</p>
-                    </div>
-                </div>
+                </div>    
 
-                <!-- Видео 3 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview3.jpg">
-                            <source src="videos/review3.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                    <div class="video-content">
-                        <h3>Дмитрий, 42 года</h3>
-                        <div class="video-service">Программа "Самооценка"</div>
-                        <p class="video-description">"Долго не решался обратиться к психологу. Теперь жалею, что не сделал этого раньше. Огромные изменения!"</p>
-                    </div>
-                </div>
-
-                <!-- Видео 4 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview4.jpg">
-                            <source src="videos/review4.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                    <div class="video-content">
-                        <h3>Ольга, 31 год</h3>
-                        <div class="video-service">Онлайн-терапия</div>
-                        <p class="video-description">"Очень удобный формат, не нужно никуда ехать. Екатерина прекрасный специалист, очень бережная и профессиональная."</p>
-                    </div>
-                </div>
-
-                <!-- Видео 5 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview5.jpg">
-                            <source src="videos/review5.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                    <div class="video-content">
-                        <h3>Наталья с дочерью</h3>
-                        <div class="video-service">Подростковое консультирование</div>
-                        <p class="video-description">"Были сложности в общении с дочерью. Теперь мы стали ближе и понимаем друг друга."</p>
-                    </div>
-                </div>
-
-                <!-- Видео 6 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="images/video-preview6.jpg">
-                            <source src="videos/review6.mp4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                    <div class="video-content">
-                        <h3>Сергей, 45 лет</h3>
-                        <div class="video-service">Работа с тревогой</div>
-                        <p class="video-description">"Страдал от панических атак. После курса терапии чувствую себя свободным. Рекомендую!"</p>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
