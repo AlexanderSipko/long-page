@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #F9E6E6;
     --secondary-color: #FFF5F0;
     --dark-header: #E8D1D1;
@@ -7,8 +7,21 @@
     --telegram-color: #B8C9E1;
     --card-bg: #FFFFFF;
     --hover-color: #C9B2B2;
+    --font-main: 'FuturaPT', Arial, sans-serif;
+} */
+
+:root {
+    --primary-color: #F3E9DE;      /* Нежный капучино (вместо светло-розового) */
+    --secondary-color: #FAF3EB;    /* Тёплый взбитый крем (вместо персикового) */
+    --dark-header: #8c70557d;        /* Мягкий песочный (вместо тёмно-розового) */
+    --text-color: #6B5F57;         /* Горький шоколад (вместо серо-коричневого) */
+    --accent-color: #C7B5A6;       /* Лавандовый раф / Молочный улун (вместо пыльно-розового) */
+    --telegram-color: #D7CDBE;     /* Кофе с молоком (вместо голубого) */
+    --card-bg: #FDFAF7;            /* Белый (можно заменить на #FDFAF7 для уюта) */
+    --hover-color: #a58f7e;        /* Корица (вместо серо-розового) */
     /* --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif; */
     --font-main: 'FuturaPT', Arial, sans-serif;
+    
 }
 
 
@@ -24,7 +37,7 @@ html {
 body {
     margin: 0;
     font-family: var(--font-main);
-    background: var(--secondary-color);
+    /* background: var(--secondary-color); */
     color: var(--text-color);
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -205,6 +218,7 @@ header h1 {
 section {
     width: 100%;
     max-width: 80%;
+    margin-top: 1rem;
     padding: 20px 20px;
     margin: auto;
     border-radius: 20px;
@@ -213,16 +227,18 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: #FFFAF5;  /* Заменил #FFFAF5 на тон подходящий к палитре */
+    margin-top: 1rem;
+    background-color: var(--secondary-color);  
 }
 
 section:nth-child(odd) {
-    background-color: #FFF2F0;  /* Заменил #FFF2F0 на тон подходящий к палитре */
+    margin-top: 1rem;
+    background-color: var(--secondary-color);  
 }
 
 section:last-of-type {
     margin-top: 0.5rem;
-    background-color: #FFFAF5;  /* Заменил #FFFAF5 */
+    /* background-color: #FFFAF5;  */
 }
 
 h2 {
@@ -484,6 +500,8 @@ footer {
     margin-top: 10px;
     font-size: 1.2rem;
     color: var(--text-color);
+    background: var(--secondary-color);
+    opacity: 0.8;
     font-style: italic;
     padding: 10px 20px;
     border-radius: 20px;
@@ -495,7 +513,7 @@ footer {
 
 .consultation-roadmap {
     padding: 20px 20px;
-    background: #FFF2F0;  /* Заменил #FFF2F0 */
+    background: var(--secondary-color);  
     border-radius: 20px;
     max-width: 800px;
     margin: 60px auto;
