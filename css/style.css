@@ -19,9 +19,22 @@
     --telegram-color: #D7CDBE;     /* Кофе с молоком (вместо голубого) */
     --card-bg: #FDFAF7;            /* Белый (можно заменить на #FDFAF7 для уюта) */
     --hover-color: #a58f7e;        /* Корица (вместо серо-розового) */
-    /* --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif; */
     --font-main: 'FuturaPT', Arial, sans-serif;
     
+}
+
+:root {
+    --primary-color: #EADBC6;      /* Капучино с пенкой (теплее и насыщеннее) */
+    --secondary-color: #F5ECE1;    /* Сливочный крем (чуть плотнее) */
+    --dark-header: #8B6F4C;        /* Кофе с молоком (стало плотным, убрана прозрачность) */
+    --text-color: #4A3B2F;         /* Горький кофе/Шоколад (глубже для контраста) */
+    --accent-color: #B48C5C;       /* Карамельный латте (золотистый акцент) */
+    --telegram-color: #CBBAAE;     /* Какао с молоком (теплый нейтральный) */
+    --card-bg: #FDF8F2;            /* Топлёное молоко (чуть теплее) */
+    --hover-color: #8B6F4C;        /* Тот же кофе с молоком для единообразия */
+    
+    /* --font-main: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif; */
+    --font-main: 'FuturaPT', Arial, sans-serif;
 }
 
 
@@ -68,14 +81,17 @@ nav {
 .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    /* color: white; */
+    color: wheat;
     text-decoration: none;
     padding: 15px 0;
     display: block;
 }
 
 .logo a:hover {
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
+    color: white;
 }
 
 .nav-menu {
@@ -85,7 +101,9 @@ nav {
 
 .nav-menu a {
     padding: 20px 15px;
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    /* color: white; */
+    color: wheat;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -94,7 +112,8 @@ nav {
 }
 
 .nav-menu a:hover {
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
+    color: white;
 }
 
 .menu-toggle {
@@ -106,7 +125,8 @@ nav {
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    /* background-color: var(--text-color); */
+    background: wheat;
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 3px;
@@ -141,6 +161,8 @@ nav {
         padding: 15px;
         width: 100%;
         border-bottom: 1px solid rgba(64, 85, 85, 0.1); /* Используем text-color в rgba */
+
+    border-bottom: 1px solid white;
         white-space: normal;
     }
     
@@ -148,6 +170,7 @@ nav {
         border-bottom: none;
     }
     
+
     .menu-toggle.active .bar:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -159,6 +182,7 @@ nav {
     .menu-toggle.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
 }
 
 @media (max-width: 480px) {
@@ -170,6 +194,8 @@ nav {
         padding: 12px 0;
         font-size: 1.3rem;
     }
+
+
 }
 
 /* ===== ОБЩИЕ СТИЛИ ===== */
