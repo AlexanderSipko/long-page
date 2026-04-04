@@ -107,6 +107,17 @@
         
         <div class="certificates-grid" id="certificates-grid">
             <!-- Сертификаты с 1 по 17 -->
+            <div class="certificate-card" onclick="openModal(16)">
+                <img src="certificate/18.jpeg" alt="Сертификат 18 - Постановление президиума" class="certificate-image" onerror="this.src='images/certificate-placeholder.jpg'">
+                <div class="certificate-content">
+                    <h3>Постановление президиума</h3>
+                    <div class="certificate-year">2009</div>
+                    <div class="certificate-organization">
+                        <p>Совет по общественным наградам РФ</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="certificate-card" onclick="openModal(1)">
                 <img
                     src="certificate/1.jpeg"
@@ -282,6 +293,7 @@
                 </div>
             </div>
 
+
            
 
         </div>
@@ -331,7 +343,8 @@
             { src: 'certificate/14.jpeg', title: 'Психология зависимости', year: '2017', org: 'Реабилитационный центр' },
             { src: 'certificate/15.jpeg', title: 'Диплом психолога', year: '2016', org: 'Московский институт психологии' },
             { src: 'certificate/16.jpeg', title: 'Профессиональный коучинг', year: '2016', org: 'Международная академия коучинга' },
-            { src: 'certificate/17.jpeg', title: 'Медиация и разрешение конфликтов', year: '2015', org: 'Центр медиации' }
+            { src: 'certificate/17.jpeg', title: 'Медиация и разрешение конфликтов', year: '2015', org: 'Центр медиации' },
+            { src: 'certificate/18.jpeg', title: 'Постановление президиума', year: '2009', org: 'Совет по общественным наградам' }
         ];
 
         let currentIndex = 0;
