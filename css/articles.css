@@ -1,11 +1,10 @@
 /* ===== СТИЛИ ДЛЯ СТРАНИЦЫ СТАТЕЙ ===== */
 
 .articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px; /* опционально — ограничение ширины для читаемости */
     margin: 0 auto;
 }
 
