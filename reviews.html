@@ -76,11 +76,16 @@
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 30px;
         }
-
+        
+        .stats-grid > * {
+            flex: 0 0 calc(25% - 30px); /* ширина как у 4-х колонок */
+            min-width: 200px; /* чтобы не сжимались слишком сильно */
+        }
         .stat-item {
             text-align: center;
             background: white;
